@@ -19,8 +19,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.mabn.calendarlibrary.ExpandableCalendar
+import com.example.foodlog.ui.theme.appGradientStart
 import com.mabn.calendar.ui.theme.CalendarTheme
+import com.mabn.calendarlibrary.ExpandableCalendar
 import com.mabn.calendarlibrary.core.calendarDefaultTheme
 import java.time.LocalDate
 
@@ -49,12 +50,13 @@ fun Calendar() {
         ExpandableCalendar(
             theme = calendarDefaultTheme.copy(
                 dayShape = CircleShape,
-                backgroundColor = Color.Black,
-                selectedDayBackgroundColor = Color.White,
-                dayValueTextColor = Color.White,
-                selectedDayValueTextColor = Color.Black,
-                headerTextColor = Color.White,
-                weekDaysTextColor = Color.White
+                backgroundColor = Color.Transparent,
+                selectedDayBackgroundColor = Color.Transparent,
+                dayValueTextColor = Color.Black,
+                selectedDayValueTextColor = appGradientStart,
+                headerTextColor = Color.Black,
+                weekDaysTextColor = Color.Black,
+                selectedWeekDaysTextColor = appGradientStart
             ), onDayClick = {
                 currentDate.value = it
             })
